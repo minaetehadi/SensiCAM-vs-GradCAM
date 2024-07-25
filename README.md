@@ -12,6 +12,7 @@ This repository contains code to generate Grad-CAM and Sensi-CAM heatmaps using 
 - OpenCV
 - NumPy
 - Matplotlib
+- Torchvision
 
 ## Installation
 
