@@ -21,6 +21,5 @@ To run this code, you need to have the required libraries installed. You can ins
 ```bash
 pip install tensorflow opencv-python numpy matplotlib
 
-# Acknowledge
-Code refers to 
-- [MixCam](https://github.com/LongTerm417/MixCam)
+
+```
