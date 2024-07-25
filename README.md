@@ -20,3 +20,6 @@ To run this code, you need to have the required libraries installed. You can ins
 
 ```bash
 pip install tensorflow opencv-python numpy matplotlib
+
+## Code Reference
+(AlexNet Model) [https://github.com/soapisnotfat/pytorch-cifar10/tree/master/models]
