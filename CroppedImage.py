@@ -1,4 +1,4 @@
-#Finding Bounding Box From Heatmap
+#Crop image From Heatmap
 
 import cv2
 import numpy as np
