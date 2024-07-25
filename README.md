@@ -23,3 +23,9 @@ pip install tensorflow opencv-python numpy matplotlib
 
 
 ```
+## Acknowledgment
+Code refers to 
+- [AlexNet](https://github.com/soapisnotfat/pytorch-cifar10/tree/master/models)
+
+  # Contact 
+If you have any questions or need further assistance, please feel free to reach out to me at  (minaetehadi@eng.ui.ac.ir)
