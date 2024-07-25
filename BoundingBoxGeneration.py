@@ -92,6 +92,6 @@ cropped_img = crop_important_part(img_path, (x, y, w, h))
 display_image(cropped_img)
 
 # Save the cropped image
-cropped_img_path = '/path/to/save/cropped_image.jpg'  # Update with your desired save path
+cropped_img_path = '/path/to/save/cropped_image.jpg'  # Update with save path
 cv2.imwrite(cropped_img_path, cropped_img)
 print(f'Cropped image saved to {cropped_img_path}')
