@@ -27,7 +27,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),
 ])
 
-image_path = "/content/Labrador-Retriever.jpg"
+image_path = "/content/Lion.jpg"
 image = Image.open(image_path)
 image_tensor = transform(image).unsqueeze(0)
 
@@ -183,15 +183,19 @@ def overlay_heatmap(img_path, heatmap, alpha=0.6, colormap=cv2.COLORMAP_JET):
 overlay_img_with_heatmap = overlay_heatmap('original_image.jpg', cam, alpha=0.6)
 
 # Draw bounding box on the overlayed image
+cropped_image = None
 if bounding_box is not None:
     x_min, y_min, x_max, y_max = bounding_box
     cv2.rectangle(overlay_img_with_heatmap, (x_min, y_min), (x_max, y_max), color=(0, 255, 0), thickness=2)
+
+    # Extract and display the cropped region from the original image
+    cropped_image = original_image_np[y_min:y_max, x_min:x_max]
 
 # Convert BGR image to RGB for display
 overlay_img_with_heatmap_rgb = cv2.cvtColor(overlay_img_with_heatmap, cv2.COLOR_BGR2RGB)
 
 # Show the images and matrices
-fig, ax = plt.subplots(2, 2, figsize=(25, 15))
+fig, ax = plt.subplots(2, 3, figsize=(25, 15))
 
 # Original Image
 ax[0, 0].imshow(original_image_np)
@@ -213,6 +217,10 @@ ax[1, 1].imshow(masked_image_np)
 ax[1, 1].set_title("Masked Image")
 ax[1, 1].axis('off')
 
+# Cropped Region (if bounding box is found)
+if cropped_image is not None:
+    ax[0, 2].imshow(cropped_image)
+    ax[0, 2].set_title("Cropped Region (Original Image)")
+    ax[0, 2].axis('off')
 
 plt.show()
-
